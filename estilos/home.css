@@ -14,7 +14,7 @@
   padding: 2rem 1rem;
   color: white;
   /* Por padrão (mobile-first), os itens ficarão em coluna */
-  flex-direction: column;
+  flex-direction: row;
   gap: 2rem;
 }
 
@@ -181,10 +181,12 @@ h2 {
   }
 }
 
-@media (min-width: 375px) {
+@media (max-width: 768px) {
   #home {
-    /* Em telas maiores, os itens voltam a ficar lado a lado */
-    flex-direction: row;
+    flex-direction: column; /* um embaixo do outro */
+    text-align: center;
+    padding: 0;
+    margin: 0;
   }
 }
 
