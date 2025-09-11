@@ -175,20 +175,20 @@ h2 {
 /* --- ADIÇÃO APENAS DA RESPONSIVIDADE DE LAYOUT --- */
 
 /* Para Tablets e Telas Maiores (a partir de 768px) */
-@media (max-width: 100px) {
+@media (min-width: 300px) {
   header {
     display: none;
   }
 }
 
-@media (max-width: 100px) {
+@media (min-width: 300px) {
   #home {
     flex-direction: row; /* um embaixo do outro */
     text-align: center;
   }
 }
 
-@media (max-width: 100px) {
+@media (min-width: 300px) {
   #home img {
     display: none;
   }
