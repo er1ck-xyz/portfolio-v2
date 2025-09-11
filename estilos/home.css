@@ -13,11 +13,16 @@
   /* Adiciona um espaço interno para não ficar grudado nas bordas */
   padding: 2rem 1rem;
   color: white;
+  /* Por padrão (mobile-first), os itens ficarão em coluna */
+  flex-direction: column;
+  gap: 2rem;
 }
 
 #home .textos {
   /* Adiciona flex-grow para que a div ocupe o espaço disponível */
   flex-grow: 1;
+  /* Garante que o conteúdo de texto não seja espremido */
+  width: 100%;
 }
 
 #home .imagem {
@@ -27,6 +32,9 @@
   flex-grow: 1;
   /* Adiciona uma altura mínima para visualização */
   min-height: 300px;
+  /* Define uma largura para melhor visualização em mobile */
+  width: 90%;
+  max-width: 400px;
 }
 
 /* Para ajustar a imagem dentro da div */
@@ -36,16 +44,7 @@
   object-fit: cover;
 }
 
-#home {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: row; /* Mantém os dois blocos (textos e imagem) lado a lado */
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
-  padding: 2rem 1rem;
-  color: white;
-  gap: 2rem;
-}
+/* Duplicação de #home removida, usando a de cima como base */
 
 .textos-home {
   display: flex;
@@ -171,4 +170,20 @@ h2 {
   color: violet;
   text-shadow: 0 0 10px rgba(238, 130, 238, 0.418),
     0 0 20px rgba(238, 130, 238, 0.548), 0 0 30px rgba(238, 130, 238, 0.384);
+}
+
+/* --- ADIÇÃO APENAS DA RESPONSIVIDADE DE LAYOUT --- */
+
+/* Para Tablets e Telas Maiores (a partir de 768px) */
+@media (min-width: 600px) {
+  #home {
+    /* Em telas maiores, os itens voltam a ficar lado a lado */
+    flex-direction: row;
+  }
+
+  #home .imagem {
+    /* A imagem pode voltar a ter uma largura mais flexível */
+    width: 100%;
+    max-width: none;
+  }
 }
