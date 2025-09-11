@@ -181,7 +181,7 @@ h2 {
   }
 }
 
-@media (min-width: 400px) {
+@media (min-width: 375px) {
   #home {
     /* Em telas maiores, os itens voltam a ficar lado a lado */
     flex-direction: row;
