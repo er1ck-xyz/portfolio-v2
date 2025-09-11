@@ -1,0 +1,226 @@
+:root {
+  --cor-verde: rgb(0, 255, 128);
+  --cor-cinza: #191627;
+
+  /* variáveis usadas para animações FA / fallback */
+  --fa-animation-duration: 0.9s;
+  --fa-animation-iteration-count: infinite;
+  --fa-fade-opacity: 0.4;
+  --fa-animation-timing-function: ease-in-out;
+}
+
+/* reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== Body / Background ===== */
+body {
+  padding-top: 13vh; /* compensa o header fixo */
+  background: url("https://upload.wikimedia.org/wikipedia/commons/c/cc/Digital_rain_animation_medium_letters_shine.gif")
+    center/cover fixed no-repeat;
+  background-color: #0b0b0f; /* fallback */
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* reduzir problema de performance em mobile */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll; /* evita travamento em mobile */
+  }
+}
+
+/* overlay para leitura (posição fixa) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+  z-index: 1; /* fica acima do background, abaixo do conteúdo (seções têm z-index maior) */
+}
+
+/* ===== Header ===== */
+/* Regra única e correta para header (sem duplicação e sem erro de sintaxe) */
+header {
+  height: 13vh;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: transparent; /* evita preenchimento sólido */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5vh; /* espaço nas laterais */
+  z-index: 1000; /* acima do overlay */
+}
+
+/* Voltar (link à esquerda) */
+header a.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+}
+
+/* estilo do ícone "back" (mantive sua animação) */
+.icon-back {
+  color: var(--cor-verde);
+  text-shadow: 0 0 5px rgb(0, 255, 128), 0 0 10px rgb(0, 255, 128),
+    0 0 20px rgb(0, 255, 128);
+  font-size: 2rem;
+  vertical-align: middle;
+  cursor: default;
+  display: inline-block;
+  animation: anim 1s infinite alternate;
+}
+
+@keyframes anim {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+/* underline animado do "Voltar" */
+header a.back span {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+}
+
+header a.back span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 3px;
+  width: 0;
+  background-color: var(--cor-verde);
+  box-shadow: 0 0 8px var(--cor-verde), 0 0 16px var(--cor-verde);
+  border-radius: 2px;
+  transition: width 0.3s ease-in-out;
+}
+
+header a.back span:hover::after {
+  width: 100%;
+}
+
+/* ===== Nav (links à direita) ===== */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 3rem; /* espaçamento entre os links */
+  margin-right: 0;
+}
+
+/* estilo exclusivo dos links do nav */
+nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 2px;
+  position: relative; /* necessário para o ::after */
+}
+
+/* underline animado apenas para links do nav */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 3px;
+  width: 0;
+  background-color: var(--cor-verde);
+  box-shadow: 0 0 8px var(--cor-verde), 0 0 16px var(--cor-verde);
+  border-radius: 2px;
+  transition: width 0.25s ease-in-out;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ===== Seções ===== */
+/* deixamos as seções posicionadas acima do overlay */
+section {
+  position: relative;
+  z-index: 2; /* acima do overlay (body::before) */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  scroll-margin-top: 13vh; /* âncoras não ficam escondidas pelo header */
+  padding: 2rem 1rem;
+}
+
+/* ===== Font Awesome: aplicar animações FA apenas no hover (CSS-only) ===== */
+/* garante que aceitem transform/anim; não forço a cor verde por padrão */
+nav a i,
+nav a svg,
+nav a .svg-inline--fa {
+  display: inline-block;
+  transform-origin: center center;
+  -webkit-transform-origin: center center;
+  color: var(--cor-verde); /* mantém a cor do link (branco) por padrão */
+}
+
+/* aplica o efeito fa-fade/hover apenas ao passar o mouse */
+nav a:hover i,
+nav a:hover svg,
+nav a:hover .svg-inline--fa {
+  animation-name: fa-fade;
+  animation-duration: var(--fa-animation-duration);
+  animation-timing-function: var(--fa-animation-timing-function);
+  animation-iteration-count: var(--fa-animation-iteration-count);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-delay: var(--fa-animation-delay, 0s);
+}
+
+/* fallback: define fa-fade caso a sua versão do FA não traga o keyframe */
+@keyframes fa-fade {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes fa-fade {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}

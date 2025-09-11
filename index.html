@@ -7,28 +7,374 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="public/icones.css" />
     <link rel="stylesheet" href="fonts/fonts.css" />
+    <link rel="stylesheet" href="estilos/icons-animation.css" />
+    <link rel="stylesheet" href="estilos/home.css" />
+    <link rel="stylesheet" href="estilos/sobre.css" />
+    <link rel="stylesheet" href="estilos/resumo.css" />
+    <link rel="stylesheet" href="estilos/contato.css" />
   </head>
   <body>
     <header>
       <h1>Meu Portfólio</h1>
       <nav>
-        <a href="#home">Home</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#resumo">Resumo</a>
-        <a href="#contato">Contato</a>
+        <a href="#home"> <i class="fa-jelly fa-regular fa-house"></i>Home</a>
+        <a href="#sobre">
+          <i class="fa-sharp fa-light fa-user-doctor"></i> Sobre</a
+        >
+        <a href="#resumo">
+          <i class="fa-jelly fa-regular fa-pencil"></i> Resumo</a
+        >
+        <a href="#contato"> <i class="fa-regular fa-phone-plus"></i> Contato</a>
       </nav>
     </header>
     <section id="home">
-      <h1>Sessão home</h1>
+      <div class="textos-home">
+        <h1>Olá, eu sou</h1>
+        <h2>ERICK</h2>
+        <div>
+          <a href="https://github.com/er1ck-xyz" target="_blank"
+            ><i class="fa-brands fa-github icone-home"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/erickdll_?igsh=aXVhczRuc3c0cHlp&utm_source=qr"
+            target="_blank"
+            ><i class="fa-brands fa-instagram icone-home"></i
+          ></a>
+          <a
+            href="https://api.whatsapp.com/send/?phone=5544991849593&text&type=phone_number&app_absent=0"
+            target="_blank"
+            ><i class="fa-brands fa-whatsapp icone-home"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/erick-vessoli-39418b380?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+            target="_blank"
+            ><i class="fa-brands fa-square-linkedin icone-home"></i
+          ></a>
+        </div>
+        <h3>
+          <i
+            class="fa-slab-press fa-regular fa-code fa-beat-fade"
+            style="color: violet"
+          ></i>
+          Full Stack Developer in Progress
+        </h3>
+        <p>
+          <i
+            class="fa-slab-press fa-regular fa-code fa-beat-fade"
+            style="color: violet"
+          ></i>
+          Diving deeper into Web Development
+        </p>
+        <div class="texto-animado">
+          <span></span>
+        </div>
+      </div>
+      <img src="public/imagens/home.svg" width="600" alt="" />
     </section>
     <section id="sobre">
-      <h1>Sessão sobre</h1>
+      <div class="conteudo-sobre">
+        <div class="texto-sobre">
+          <h1>Sobre <span style="color: violet">mim</span></h1>
+          <p>
+            Comecei explorando uma ferramenta chamada
+            <strong style="color: aqua">Cheat Engine</strong>, usada até hoje
+            para entender e modificar valores em jogos, como dinheiro, vida ou
+            habilidades. No início, tudo era pura curiosidade: queria descobrir
+            como os jogos funcionavam por dentro e como certos recursos eram
+            manipulados.
+          </p>
+          <p>
+            Para aprender, assisti a diversos vídeos tutoriais, li fóruns e
+            acompanhei outros entusiastas, sempre com foco em entender os
+            conceitos por trás das modificações, e não apenas em usar
+            <strong style="font-size: 1.2rem; color: greenyellow"
+              >cheats</strong
+            >
+            prontos. Cada experiência me ensinava mais sobre memória, lógica de
+            programação e sistemas de jogo, despertando meu interesse em criar
+            minhas próprias soluções do zero.
+          </p>
+          <p>
+            Com o tempo, comecei a estudar
+            <strong style="font-size: 1.2rem; color: red">C++</strong> e
+            <strong style="font-size: 1.2rem; color: rgb(30, 30, 211)"
+              >Assembly</strong
+            >
+            explorando conceitos avançados de programação e lógica de sistemas.
+            No entanto, não levei esses estudos adiante de forma contínua
+            naquela época, mas a experiência me deu uma base importante e
+            despertou ainda mais minha paixão por tecnologia.
+          </p>
+          <p>
+            Essa fase foi fundamental para minha trajetória, mostrando que
+            curiosidade, prática e estudo são a chave para evoluir como
+            <strong style="color: yellowgreen">programador</strong> e
+            solucionador de problemas complexos.
+          </p>
+        </div>
+        <img
+          src="public/imagens/about2.png"
+          alt="Ilustração de um desenvolvedor em uma mesa com um computador"
+        />
+      </div>
     </section>
     <section id="resumo">
-      <h1>Sessão resumo</h1>
+      <div class="resumo-conteudo">
+        <div class="resumo-introducao">
+          <h1>Resumo / O que é necessário para começar</h1>
+          <p>
+            A área de exploração de jogos e engenharia reversa exige uma
+            combinação de habilidades teóricas e práticas. Para iniciar, é
+            fundamental entender os conceitos básicos de sistemas de computador,
+            memória e lógica de programação, pois eles são a base para qualquer
+            modificação segura e eficiente. caso queira se aprofundar, aqui
+            estão algumas habilidades e conhecimentos essenciais: leia mais
+            sobre clicando <a id="click-here" href="skills.html">aqui</a>
+          </p>
+        </div>
+
+        <div class="resumo-detalhes">
+          <div class="coluna-habilidades">
+            <h2>Linguagens de Programação</h2>
+            <ul>
+              <li>
+                <strong
+                  style="
+                    color: #06ff59;
+                    font-size: 1.2em;
+                    text-decoration: underline;
+                    text-decoration-color: #06ff59;
+                  "
+                  >C++:</strong
+                >
+                A linguagem mais utilizada para criar ferramentas complexas de
+                modificação, injeção de código e desenvolvimento de drivers.
+                Permite controle direto sobre memória, threads e recursos do
+                sistema.
+              </li>
+              <li>
+                <strong
+                  style="
+                    color: #b22222;
+                    font-size: 1.2em;
+                    text-decoration: underline;
+                    text-decoration-color: #b22222;
+                  "
+                  >Assembly:</strong
+                >
+                Essencial para entender como os jogos e sistemas operacionais
+                funcionam em baixo nível, identificar instruções, estruturas de
+                memória e pontos de hook.
+              </li>
+              <li>
+                <strong
+                  style="
+                    color: #306998;
+                    font-size: 1.2em;
+                    text-decoration: underline;
+                    text-decoration-color: #306998;
+                  "
+                  >Python / C#:</strong
+                >
+                Úteis para criar scripts auxiliares, análises de memória ou
+                interfaces gráficas para suas ferramentas.
+              </li>
+            </ul>
+          </div>
+
+          <div class="coluna-habilidades">
+            <h2>Competências e Conhecimentos</h2>
+            <ul>
+              <li>
+                <strong
+                  style="
+                    color: #6a5acd;
+                    font-size: 1.2em;
+                    text-decoration: underline;
+                    text-decoration-color: #6a5acd;
+                  "
+                  >Engenharia Reversa:</strong
+                >
+                Saber como desmontar, analisar e compreender binários de jogos,
+                entender estruturas de dados e encontrar padrões de memória.
+              </li>
+              <li>
+                <strong
+                  style="
+                    color: #008b8b;
+                    font-size: 1.2em;
+                    text-decoration: underline;
+                    text-decoration-color: #008b8b;
+                  "
+                  >Manipulação de memória:</strong
+                >
+                Aprender a identificar valores dinâmicos, ponteiros e estruturas
+                de dados de runtime.
+              </li>
+              <li>
+                <strong
+                  style="
+                    color: #2f4f4f;
+                    font-size: 1.2em;
+                    text-decoration: underline;
+                    text-decoration-color: #2f4f4f;
+                  "
+                  >Criação de drivers de kernel:</strong
+                >
+                Para modificar ou ler informações de processos de forma segura,
+                evitando limitações do user-mode (como anti-cheats).
+              </li>
+              <li>
+                <strong
+                  style="
+                    color: #daa520;
+                    font-size: 1.2em;
+                    text-decoration: underline;
+                    text-decoration-color: #daa520;
+                  "
+                  >Assinatura de drivers:</strong
+                >
+                Para que os drivers possam ser carregados no Windows sem
+                triggers de segurança ou anti-cheats, é necessário obter
+                certificados digitais válidos.
+              </li>
+            </ul>
+          </div>
+
+          <div class="coluna-habilidades">
+            <h2>Ferramentas e Recursos</h2>
+            <ul>
+              <li>
+                <strong
+                  style="
+                    color: chocolate;
+                    font-size: 1.2em;
+                    text-decoration: underline;
+                    text-decoration-color: chocolate;
+                  "
+                  >Debuggers:</strong
+                >
+                Softwares como x64dbg ou OllyDbg para análise de executáveis.
+              </li>
+              <li>
+                <strong
+                  style="
+                    color: violet;
+                    font-size: 1.2em;
+                    text-decoration: underline;
+                    text-decoration-color: violet;
+                  "
+                  >Dumpers:</strong
+                >
+                Para localizar endereços dinâmicos em engines de jogos como
+                Unreal Engine (ex: GNames e GWorld).
+              </li>
+              <li>
+                <strong
+                  style="
+                    color: rgba(97, 97, 235, 0.733);
+                    font-size: 1.2em;
+                    text-decoration: underline;
+                    text-decoration-color: rgba(97, 97, 235, 0.733);
+                  "
+                  >Cheat Engine:</strong
+                >
+                Excelente para aprender conceitos de memória, ponteiros e
+                valores estáticos/dinâmicos.
+              </li>
+              <li>
+                <strong
+                  style="
+                    color: rgb(235, 199, 156);
+                    font-size: 1.2em;
+                    text-decoration: underline;
+                    text-decoration-color: rgb(235, 199, 156);
+                  "
+                  >Fóruns e Tutoriais:</strong
+                >
+                Comunidades de engenharia reversa e hacking ético, onde é
+                possível aprender com projetos reais e exemplos.
+              </li>
+              <li>
+                <strong
+                  style="
+                    color: yellow;
+                    font-size: 1.2em;
+                    text-decoration: underline;
+                    text-decoration-color: yellow;
+                  "
+                  >IDA Pro / IDA Free:</strong
+                >
+                Uma das ferramentas mais poderosas para engenharia reversa,
+                permite analisar código assembly, mapear funções, identificar
+                chamadas importantes e compreender a estrutura do binário.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
+    <!-- Sessão de Contato -->
     <section id="contato">
-      <h1>sessão contato</h1>
+      <h2 class="titulo-contato">Entre em <span>Contato</span></h2>
+
+      <div class="contato-container">
+        <!-- Texto lateral -->
+        <div class="contato-texto">
+          <h3>Pronto para transformar sua ideia em um site incrível?</h3>
+          <p>Entre em contato e vamos conversar sobre seu projeto!</p>
+        </div>
+
+        <!-- Formulário -->
+        <form
+          action="https://formsubmit.co/erickvessoli656@gmail.com"
+          method="POST"
+          class="form-contato"
+        >
+          <!-- Configurações ocultas -->
+          <input type="hidden" name="_captcha" value="false" />
+          <input
+            type="hidden"
+            name="_subject"
+            value="Novo contato do meu portfólio!"
+          />
+          <input type="hidden" name="_template" value="box" />
+          <input
+            type="hidden"
+            name="_next"
+            value="https://er1ck-xyz.github.io/envio-contato.html"
+          />
+
+          <div class="input-group">
+            <input type="text" name="nome" placeholder="Nome" required />
+            <input type="text" name="sobrenome" placeholder="Sobrenome" />
+          </div>
+
+          <div class="input-group whatsapp">
+            <input
+              type="text"
+              name="whatsapp"
+              placeholder="WhatsApp (ex: 11912345678)"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <input type="email" name="email" placeholder="Email" required />
+          </div>
+
+          <div class="input-group">
+            <textarea
+              name="mensagem"
+              rows="5"
+              placeholder="Digite sua mensagem..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
     </section>
   </body>
 </html>

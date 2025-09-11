@@ -1,0 +1,174 @@
+:root {
+  --cor-verde: rgb(0, 255, 128);
+}
+
+#home {
+  /* Define a altura mínima da seção */
+  min-height: 100vh;
+  /* Garante que o conteúdo seja exibido em linha */
+  display: flex;
+  /* Alinha o conteúdo ao centro */
+  justify-content: center;
+  align-items: center;
+  /* Adiciona um espaço interno para não ficar grudado nas bordas */
+  padding: 2rem 1rem;
+  color: white;
+}
+
+#home .textos {
+  /* Adiciona flex-grow para que a div ocupe o espaço disponível */
+  flex-grow: 1;
+}
+
+#home .imagem {
+  /* Adiciona um fundo para visualizar a div */
+  background-color: #333;
+  /* Adiciona flex-grow para que a div ocupe o espaço disponível */
+  flex-grow: 1;
+  /* Adiciona uma altura mínima para visualização */
+  min-height: 300px;
+}
+
+/* Para ajustar a imagem dentro da div */
+#home .imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row; /* Mantém os dois blocos (textos e imagem) lado a lado */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  padding: 2rem 1rem;
+  color: white;
+  gap: 2rem;
+}
+
+.textos-home {
+  display: flex;
+  flex-direction: column; /* Coloca os textos um embaixo do outro */
+  justify-content: center; /* Centraliza os textos verticalmente */
+  align-items: flex-start; /* Alinha os textos à esquerda */
+}
+
+/* Opcional: Adicionar um pequeno espaçamento entre os textos */
+.textos-home h1,
+.textos-home h2,
+.textos-home h3,
+.textos-home p {
+  margin-bottom: 2rem;
+  font-family: "Kode Mono";
+  font-size: 2rem;
+}
+
+h2 {
+  color: violet;
+  padding-left: 1vh;
+}
+
+.textos-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Orbitron";
+}
+
+.texto-animado {
+  font-size: 34px;
+  font-weight: 600;
+  min-width: 280px;
+}
+
+.texto-animado span {
+  position: relative;
+}
+
+.texto-animado span::before {
+  content: "Youtuber";
+  color: violet;
+  animation: words 20s infinite;
+}
+
+.texto-animado span::after {
+  content: "";
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  background-color: #191627;
+  border-left: 2px solid white;
+  right: -8px;
+  animation: cursor 3s infinite, typing 20s steps(12) infinite;
+}
+
+@keyframes cursor {
+  to {
+    border-left: 2px solid #191627;
+  }
+}
+
+@keyframes words {
+  0%,
+  20% {
+    content: "HTML / CSS";
+  }
+  21%,
+  40% {
+    content: "Tailwind";
+  }
+  41%,
+  60% {
+    content: "JavaScript";
+  }
+  61%,
+  80% {
+    content: "BootStrap";
+  }
+  81%,
+  100% {
+    content: "Design de sites";
+  }
+}
+
+@keyframes typing {
+  10%,
+  15%,
+  30%,
+  35%,
+  50%,
+  70%,
+  75%,
+  90%,
+  95% {
+    width: 0;
+  }
+  5%,
+  20%,
+  25%,
+  40%,
+  45%,
+  60%,
+  65%,
+  80%,
+  85% {
+    width: calc(100% + 8px);
+  }
+}
+
+.icone-home {
+  font-size: 2.5rem;
+  margin-bottom: 5vh;
+  color: gray;
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.icone-home:hover {
+  transform: scale(1.18);
+  color: violet;
+  text-shadow: 0 0 10px rgba(238, 130, 238, 0.418),
+    0 0 20px rgba(238, 130, 238, 0.548), 0 0 30px rgba(238, 130, 238, 0.384);
+}
