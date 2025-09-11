@@ -181,9 +181,9 @@ h2 {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 300px) {
   #home {
-    flex-direction: column; /* um embaixo do outro */
+    flex-direction: row; /* um embaixo do outro */
     text-align: center;
   }
 }
