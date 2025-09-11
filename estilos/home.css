@@ -175,7 +175,7 @@ h2 {
 /* --- ADIÇÃO APENAS DA RESPONSIVIDADE DE LAYOUT --- */
 
 /* Para Tablets e Telas Maiores (a partir de 768px) */
-@media (max-width: 400px) {
+@media (max-width: 300px) {
   header {
     display: none;
   }
