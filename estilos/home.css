@@ -185,12 +185,10 @@ h2 {
   #home {
     flex-direction: column; /* um embaixo do outro */
     text-align: center;
-    padding: 0;
-    margin: 0;
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 300px) {
   #home img {
     display: none;
   }
