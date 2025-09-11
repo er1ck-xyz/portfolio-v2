@@ -33,3 +33,13 @@
   max-width: 650px; /* Define um tamanho máximo para a imagem */
   height: auto;
 }
+
+/* iPad */
+@media (max-width: 1024px) {
+  #sobre .imagem-sobre {
+    display: none;
+  }
+  #sobre p {
+    font-size: 0.8rem;
+  }
+}

@@ -70,3 +70,14 @@
 #click-here:hover {
   text-decoration: underline;
 }
+
+@media (min-width: 1024px) {
+  
+  #resumo h1, h2 {
+    font-size: 2rem;
+  }
+
+  #resumo li {
+    font-size: 0.75em;
+  }
+}
