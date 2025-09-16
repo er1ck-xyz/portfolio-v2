@@ -11,6 +11,7 @@ section {
   flex-direction: column;
   scroll-margin-top: 80px;
   padding: 2rem 1rem;
+  background-color: #191627;
 }
 
 html {
@@ -18,7 +19,7 @@ html {
 }
 
 body {
-  background: #191627;
+  background-color: #191627;
 }
 
 header {
@@ -34,6 +35,17 @@ header {
   padding: 0 2rem;
   z-index: 1000;
   height: 12vh;
+  visibility: hidden;
+  opacity: 0;
+  animation: show-content 1.5s linear forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes show-content {
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 header h1 {

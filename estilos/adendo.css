@@ -1,0 +1,86 @@
+section#adendo {
+  margin: 3vh auto;
+  padding: 2vh 3vw;
+  background: #1b1b2f;
+  border-radius: 15px;
+  background-color: #191627;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+}
+
+section#adendo h1 {
+  text-align: center;
+  color: #ffffff;
+  font-family: "Exo 2", sans-serif;
+  font-size: 2.8rem;
+  margin-bottom: 4vh;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(255, 77, 77, 0.9), 0 0 20px rgba(255, 77, 77, 0.7),
+    0 0 30px rgba(255, 77, 77, 0.5);
+}
+
+section#adendo p {
+  text-align: justify;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: #e0e0e0;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin-bottom: 1vh;
+}
+
+section#adendo p strong {
+  color: #ff4d4d; /* dá destaque às palavras fortes */
+  font-weight: bold;
+  text-shadow: 0 0 1px rgba(255, 77, 77, 0.9), 0 0 2px rgba(255, 77, 77, 0.7),
+    0 0 3px rgba(255, 77, 77, 0.5);
+}
+
+.card {
+  margin: 0 auto;
+  padding: 2rem;
+  max-width: 1000px;
+  background: #191627;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card::after {
+  --angle: 0deg;
+  content: "";
+  position: absolute;
+  inset: -4px; /* faz a borda sair pra fora */
+  border-radius: 12px;
+  padding: 4px; /* espessura da borda */
+  background: conic-gradient(from var(--angle), transparent 50%, violet);
+  z-index: -1;
+  animation: spin 3s linear infinite;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 12px;
+  background: conic-gradient(from var(--angle), transparent 50%, violet);
+  filter: blur(20px); /* intensidade do blur */
+  z-index: -2; /* fica atrás da borda */
+  opacity: 1;
+  animation: spin 3s linear infinite; /* mesmo efeito no blur */
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}

@@ -3,6 +3,7 @@
   flex-direction: row-reverse; /* Inverte a ordem para a imagem ficar na direita */
   align-items: flex-start; /* Alinha o conteúdo ao topo */
   justify-content: center;
+  background-color: #191627;
 
   color: white;
   font-family: "Kode Mono", sans-serif;

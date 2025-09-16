@@ -3,19 +3,25 @@
 }
 
 #home {
-  /* Define a altura mínima da seção */
   min-height: 100vh;
-  /* Garante que o conteúdo seja exibido em linha */
   display: flex;
-  /* Alinha o conteúdo ao centro */
   justify-content: center;
   align-items: center;
-  /* Adiciona um espaço interno para não ficar grudado nas bordas */
   padding: 2rem 1rem;
   color: white;
-  /* Por padrão (mobile-first), os itens ficarão em coluna */
   flex-direction: row;
   gap: 2rem;
+  visibility: hidden;
+  opacity: 0;
+  animation: show-content 1.5s linear forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes show-content {
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 #home .textos {
@@ -218,11 +224,10 @@ footer {
 footer p {
   margin: 5px 0;
   transition: text-shadow 0.3s ease-in-out, color 0.3s;
+  background-color: #191627;
 }
 
 footer p:hover {
   color: #ff66ff; /* Destaca no hover */
   text-shadow: 0 0 8px #ff00ff, 0 0 15px #ff00ff, 0 0 25px #ff00ff;
 }
-
-

@@ -12,10 +12,32 @@
     <link rel="stylesheet" href="estilos/sobre.css" />
     <link rel="stylesheet" href="estilos/resumo.css" />
     <link rel="stylesheet" href="estilos/contato.css" />
+    <link rel="stylesheet" href="estilos/adendo.css" />
+    <link rel="stylesheet" href="estilos/scroll-animation.css" />
+    <link rel="stylesheet" href="estilos/barra-animation.css" />
   </head>
   <body>
+    <div class="bars-animation">
+      <div class="bar" style="--i: 6"></div>
+      <div class="bar" style="--i: 5"></div>
+      <div class="bar" style="--i: 4"></div>
+      <div class="bar" style="--i: 3"></div>
+      <div class="bar" style="--i: 2"></div>
+      <div class="bar" style="--i: 1"></div>
+    </div>
+
     <header>
-      <h1>Meu Portfólio</h1>
+
+          <div class="bars-animation">
+      <div class="bar" style="--i: 6"></div>
+      <div class="bar" style="--i: 5"></div>
+      <div class="bar" style="--i: 4"></div>
+      <div class="bar" style="--i: 3"></div>
+      <div class="bar" style="--i: 2"></div>
+      <div class="bar" style="--i: 1"></div>
+    </div>
+
+      <h1>ERICK - DEV <i class="fa-sharp fa-solid fa-computer"></i></h1>
       <nav>
         <a href="#home"> <i class="fa-jelly fa-regular fa-house"></i>Home</a>
         <a href="#sobre">
@@ -74,8 +96,8 @@
     <section id="sobre">
       <div class="conteudo-sobre">
         <div class="texto-sobre">
-          <h1>Sobre <span style="color: violet">mim</span></h1>
-          <p>
+          <h1 class="autoShow">Sobre <span style="color: violet">mim</span></h1>
+          <p class="autoShow">
             Comecei explorando uma ferramenta chamada
             <strong style="color: aqua">Cheat Engine</strong>, usada até hoje
             para entender e modificar valores em jogos, como dinheiro, vida ou
@@ -83,7 +105,7 @@
             como os jogos funcionavam por dentro e como certos recursos eram
             manipulados.
           </p>
-          <p>
+          <p class="autoShow">
             Para aprender, assisti a diversos vídeos tutoriais, li fóruns e
             acompanhei outros entusiastas, sempre com foco em entender os
             conceitos por trás das modificações, e não apenas em usar
@@ -94,7 +116,7 @@
             programação e sistemas de jogo, despertando meu interesse em criar
             minhas próprias soluções do zero.
           </p>
-          <p>
+          <p class="autoShow">
             Com o tempo, comecei a estudar
             <strong style="font-size: 1.2rem; color: red">C++</strong> e
             <strong style="font-size: 1.2rem; color: rgb(30, 30, 211)"
@@ -105,7 +127,7 @@
             naquela época, mas a experiência me deu uma base importante e
             despertou ainda mais minha paixão por tecnologia.
           </p>
-          <p>
+          <p class="autoShow">
             Essa fase foi fundamental para minha trajetória, mostrando que
             curiosidade, prática e estudo são a chave para evoluir como
             <strong style="color: yellowgreen">programador</strong> e
@@ -113,28 +135,28 @@
           </p>
         </div>
         <img
-          class="imagem-sobre"
+          class="imagem-sobre imageReveal"
           src="public/imagens/about2.png"
           alt="Ilustração de um desenvolvedor em uma mesa com um computador"
         />
       </div>
     </section>
+
     <section id="resumo">
       <div class="resumo-conteudo">
         <div class="resumo-introducao">
-          <h1>Resumo / O que é necessário para começar</h1>
-          <p>
+          <h1 class="autoShow">Resumo / Ferramentas & Habilidades</h1>
+          <p class="autoShow">
             A área de exploração de jogos e engenharia reversa exige uma
             combinação de habilidades teóricas e práticas. Para iniciar, é
             fundamental entender os conceitos básicos de sistemas de computador,
             memória e lógica de programação, pois eles são a base para qualquer
-            modificação segura e eficiente. caso queira se aprofundar, aqui
-            estão algumas habilidades e conhecimentos essenciais: leia mais
-            sobre clicando <a id="click-here" href="skills.html">aqui</a>
+            modificação segura e eficiente. Caso queira se aprofundar, aqui
+            estão algumas habilidades e conhecimentos essenciais
           </p>
         </div>
 
-        <div class="resumo-detalhes">
+        <div class="resumo-detalhes autoShow">
           <div class="coluna-habilidades">
             <h2>Linguagens de Programação</h2>
             <ul>
@@ -315,13 +337,60 @@
         </div>
       </div>
     </section>
+
+    <section id="adendo" class="card">
+      <h1 class="autoShow">AVISO</h1>
+      <p class="autoShow">
+        Este material possui caráter <strong>estritamente educacional</strong> e
+        destina-se unicamente ao estudo teórico e experimental em ambientes
+        controlados.<br /><br />
+
+        Não constitui, em hipótese alguma, um manual para contornar mecanismos
+        de segurança, burlar anti-cheats, distribuir ferramentas de trapaça ou
+        desenvolver e assinar drivers com finalidade maliciosa.<br /><br />
+
+        A publicação, o uso ou a implementação de técnicas que possam
+        comprometer a integridade, disponibilidade ou confidencialidade de
+        sistemas de terceiros, ou que prejudiquem a experiência de outros
+        jogadores, violam termos de serviço e podem acarretar responsabilização
+        administrativa, civil e penal.<br /><br />
+
+        Adicionalmente, ressaltamos que a identificação de vulnerabilidades e
+        problemas de segurança
+        <strong
+          >só deve ser realizada com autorização expressa do titular do
+          sistema</strong
+        >.<br /><br />
+
+        Quando houver permissão formal da desenvolvedora ou do responsável
+        técnico, a atividade de busca e reporte de falhas deve seguir práticas
+        de divulgação responsável (<em>responsible disclosure</em>),
+        privilegiando a comunicação segura e colaborativa com os proprietários
+        do software, de modo a garantir a correção das falhas sem exposição
+        indevida de riscos.<br /><br />
+
+        Em qualquer hipótese, recomenda-se executar experimentos em ambientes
+        isolados (máquinas virtuais, sandboxes ou cópias locais) e agir conforme
+        princípios éticos e legais: documentar procedimentos, não distribuír
+        ferramentas prejudiciais e obter consentimento quando necessário.<br /><br />
+
+        Em síntese, o objetivo deste conteúdo é fomentar o aprendizado sobre
+        programação, sistemas e lógica computacional dentro de padrões legais,
+        éticos e responsáveis.
+        <strong
+          >Qualquer utilização contrária a estes princípios é expressamente
+          desencorajada.</strong
+        >
+      </p>
+    </section>
+
     <!-- Sessão de Contato -->
     <section id="contato">
       <h2 class="titulo-contato">Entre em <span>Contato</span></h2>
 
-      <div class="contato-container">
+      <div class="contato-container autoShow">
         <!-- Texto lateral -->
-        <div class="contato-texto">
+        <div class="contato-texto autoShow">
           <h3>Pronto para transformar sua ideia em um site incrível?</h3>
           <p>Entre em contato e vamos conversar sobre seu projeto!</p>
         </div>
@@ -330,7 +399,7 @@
         <form
           action="https://formsubmit.co/erickvessoli656@gmail.com"
           method="POST"
-          class="form-contato"
+          class="form-contato autoShow"
         >
           <!-- Configurações ocultas -->
           <input type="hidden" name="_captcha" value="false" />
