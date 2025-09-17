@@ -1,0 +1,135 @@
+/* CSS completo */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+/* SECTION: only alignment container */
+section#adendo {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: #191627;
+  scroll-margin-top: 80px;
+}
+
+/* ADENDO BOX (conteúdo) */
+.adendo-box {
+  position: relative; /* necessário para os pseudo-elements */
+  z-index: 0; /* cria stacking context */
+  width: 90%;
+  max-width: 800px;
+  max-height: 80vh;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: #191627;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+  color: #fff;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Tipografia interna */
+.adendo-box h1 {
+  margin: 0 0 1rem 0;
+  text-align: center;
+  color: #ffffff;
+  font-family: "Exo 2", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1.8vh;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(255, 77, 77, 0.9), 0 0 20px rgba(255, 77, 77, 0.7),
+    0 0 30px rgba(255, 77, 77, 0.5);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.adendo-box p {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  margin: 0;
+  line-height: 2em;
+  text-align: justify;
+  text-indent: 2rem;
+  font-size: 1rem;
+}
+
+section#adendo p strong {
+  color: #ff4d4d; /* dá destaque às palavras fortes */
+  font-weight: bold;
+  text-shadow: 0 0 1px rgba(255, 77, 77, 0.9), 0 0 2px rgba(255, 77, 77, 0.7),
+    0 0 3px rgba(255, 77, 77, 0.5);
+}
+
+/* Scroll estilizado (opcional) */
+.adendo-box::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+.adendo-box::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+}
+
+.adendo-box {
+  margin: auto;
+  padding: 2rem;
+  max-width: 100vh;
+  background: #191627;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* Ajuste a espessura da borda alterando os valores de inset em ::before e ::after */
+.adendo-box::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 12px;
+  background: conic-gradient(
+    from var(--angle),
+    transparent 50%,
+    red,
+    blue,
+    violet,
+    yellow,
+    purple
+  );
+  filter: blur(-500px); /* intensidade do blur */
+  z-index: -1; /* fica atrás da borda */
+  opacity: 1;
+  animation: spin 2.2s linear infinite; /* mesmo efeito no blur */
+}
+
+/* Inner cover — cria o "furo" no gradiente, deixando apenas o anel visível */
+.adendo-box::after {
+  --angle: 0deg;
+  content: "";
+  position: absolute;
+  inset: 3px; /* controla a espessura do anel: 3px = anel de 3px */
+  border-radius: 12px; /* igual ao border-radius da caixa */
+  background: #191627; /* mesma cor do fundo da caixa para "tapar" o centro */
+  z-index: -1;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
