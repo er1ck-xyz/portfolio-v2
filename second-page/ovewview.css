@@ -1,5 +1,5 @@
 #overview {
-  margin-bottom: 50vh;
+  margin-bottom: 10vh;
 }
 
 #overview h1 {
@@ -9,7 +9,14 @@
   line-height: 10vh;
   font-family: "font-hacking";
   font-size: 3rem;
+}
 
+#overview p {
+  text-align: center;
+  font-size: 1.8rem;
+  font-family: "Exo 2";
+  letter-spacing: 2px;
+  line-height: 3.5vh;
 }
 
 #overview img {
@@ -17,37 +24,62 @@
   margin: 0 auto;
 }
 
-:root{
-  --cor-verde: #00ff80;        /* cor do glow */
-  --glow-strong: 0 0 30px #00ff80;
-  --glow-mid:    0 0 10px #00ff80;
-  --glow-soft:   0 0 4px  #00ff80;
-  --glow-color:  var(--cor-verde);
+:root {
+  --cor-verde: #6699ff; /* cor do glow */
+  --glow-strong: 0 0 30px #6699ff;
+  --glow-mid: 0 0 10px #6699ff;
+  --glow-soft: 0 0 4px #6699ff;
+  --glow-color: var(--cor-verde);
 }
 
 /* classe aplicável a qualquer texto */
 .glow-hacking {
-  color: #e6ffe9; /* texto levemente esverdeado */
-  text-shadow:
-    0 0 1px rgba(0,255,128,0.8),
-    0 0 4px rgba(0,255,128,0.6),
-    0 0 10px rgba(0,255,128,0.35),
-    0 0 20px rgba(0,255,128,0.2);
-  /* opção extra para acentuar com um leve blur */
-  filter: drop-shadow(0 0 6px rgba(0,255,128,0.25));
+  color: #cce0ff; /* texto levemente azul claro */
+  text-shadow: 
+    0 0 1px rgba(102, 153, 255, 0.8), 
+    0 0 4px rgba(102, 153, 255, 0.6),
+    0 0 10px rgba(102, 153, 255, 0.5), 
+    0 0 20px rgba(102, 153, 255, 0.3);
+  filter: drop-shadow(0 0 6px rgba(102, 153, 255, 0.25));
   font-weight: 700;
   letter-spacing: 1px;
-  transition: text-shadow .2s ease, transform .2s ease;
+  transition: text-shadow 0.2s ease, transform 0.2s ease;
 }
 
-/* efeito de "flicker" sutil — opcional */
+/* efeito de "flicker" sutil */
 @keyframes hacking-flicker {
-  0%   { text-shadow: 0 0 1px rgba(0,255,128,0.8), 0 0 6px rgba(0,255,128,0.6); transform: translateY(0); }
-  10%  { text-shadow: 0 0 2px rgba(0,255,128,0.9), 0 0 12px rgba(0,255,128,0.7); transform: translateY(-1px); }
-  30%  { text-shadow: 0 0 0px rgba(0,255,128,0.7), 0 0 5px rgba(0,255,128,0.4); transform: translateY(0); }
-  60%  { text-shadow: 0 0 3px rgba(0,255,128,1), 0 0 18px rgba(0,255,128,0.8); transform: translateY(-0.5px); }
-  100% { text-shadow: 0 0 1px rgba(0,255,128,0.8), 0 0 6px rgba(0,255,128,0.6); transform: translateY(0); }
+  0% {
+    text-shadow: 
+      0 0 1px rgba(102, 153, 255, 0.8), 
+      0 0 6px rgba(102, 153, 255, 0.6);
+    transform: translateY(0);
+  }
+  10% {
+    text-shadow: 
+      0 0 2px rgba(102, 179, 255, 0.9), 
+      0 0 12px rgba(102, 179, 255, 0.7);
+    transform: translateY(-1px);
+  }
+  30% {
+    text-shadow: 
+      0 0 0px rgba(128, 204, 255, 0.7), 
+      0 0 5px rgba(128, 204, 255, 0.4);
+    transform: translateY(0);
+  }
+  60% {
+    text-shadow: 
+      0 0 3px rgba(77, 136, 255, 1), 
+      0 0 18px rgba(77, 136, 255, 0.8);
+    transform: translateY(-0.5px);
+  }
+  100% {
+    text-shadow: 
+      0 0 1px rgba(102, 153, 255, 0.8), 
+      0 0 6px rgba(102, 153, 255, 0.6);
+    transform: translateY(0);
+  }
 }
+
 
 /* aplicar o flicker no hover ou permanentemente (descomente o que quiser) */
 .glow-hacking:hover {
@@ -59,6 +91,8 @@
 
 /* preferências de usuário: reduzir animações se solicitado */
 @media (prefers-reduced-motion: reduce) {
-  .glow-hacking { animation: none !important; transition: none !important; }
+  .glow-hacking {
+    animation: none !important;
+    transition: none !important;
+  }
 }
-

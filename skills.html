@@ -4,10 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Skiils para Hacking</title>
-    <link rel="stylesheet" href="skills-style.css" />
+    <link rel="stylesheet" href="second-page/skills-style.css" />
     <link rel="stylesheet" href="public/icones.css" />
     <link rel="stylesheet" href="fonts/fonts.css" />
     <link rel="stylesheet" href="second-page/ovewview.css" />
+    <link rel="stylesheet" href="second-page/ferramentas.css" />
+    <link rel="stylesheet" href="second-page/bibliotecas.css">
+    <link rel="stylesheet" href="second-page/habilidades.css">
   </head>
   <body>
     <header>
@@ -19,39 +22,282 @@
         <a href="#overview">
           <i class="fa-sharp fa-regular fa-eye"></i> Overview</a
         >
-        <a href="#habilidades">
-          <i class="fa-sharp fa-light fa-laptop-code"></i> Habilidades</a
+        <a href="#ferramentas">
+          <i class="fa-sharp fa-regular fa-screwdriver-wrench"></i>
+          Ferramentas</a
         >
         <a href="#bibliotecas">
           <i class="fa-chisel fa-regular fa-book-open"></i> Bibliotecas</a
         >
-        <a href="#ferramentas">
-          <i class="fa-sharp fa-regular fa-screwdriver-wrench"></i>
-          Ferramentas</a
+        <a href="#habilidades">
+          <i class="fa-sharp fa-light fa-laptop-code"></i>Habilidades</a
         >
       </nav>
     </header>
 
     <section id="overview">
       <img
-        src="https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUyeDhpbzV1MmwxaGlvdmVndHUxNGh0c3QzNnB2Ym55OWV0OGI0NmpnbyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/wwg1suUiTbCY8H8vIA/giphy.gif"
+        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDF0YnlwMWNodnd4enJiazEzd2g3bTU1dGp2NHVpOTZndzF1dmpwayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sRFEa8lbeC7zbcIZZR/giphy.gif"
         width="450"
         height="250"
         alt=""
       />
       <h1 class="glow-hacking">
-        Em desenvolvimento
+        Análise e Exploração
         <i class="fa-duotone fa-solid fa-user-hoodie"></i>
       </h1>
-    </section>
-    <section id="habilidades">
-      <h1>area de habilidades</h1>
-    </section>
-    <section id="bibliotecas">
-      <h1>sessão se bibliotecas</h1>
+      <p>Nesta seção, apresentamos algumas das principais ferramentas utilizadas na engenharia reversa, análise de softwares e segurança da informação. Iremos explicar como cada ferramenta funciona, suas aplicações práticas e os recursos que facilitam a compreensão de códigos complexos, identificação de vulnerabilidades e exploração de sistemas. O objetivo é fornecer uma visão clara e detalhada para que você entenda quando e como utilizar cada recurso de forma eficiente.</p>
     </section>
     <section id="ferramentas">
-      <h1>area de ferramentas</h1>
+      <div class="titulo">
+        <img src="public/imagens/CE-LOGO.png" width="55" alt="" />
+        <h1>Cheat Engine</h1>
+      </div>
+      <p>
+        O Cheat Engine é uma ferramenta de análise de memória muito utilizada
+        para entender como programas e jogos armazenam e manipulam dados em
+        tempo real. De forma simples, ele funciona como um "scanner de memória":
+        você procura valores que representam recursos do jogo — como vida,
+        munição ou moedas — e pode alterá-los diretamente. A partir dessa ideia
+        básica, o programa oferece recursos mais avançados, como identificar
+        ponteiros (endereços que mudam a cada execução) e até modificar
+        instruções do próprio código. Isso faz dele uma ferramenta poderosa
+        tanto para quem quer aprender sobre funcionamento interno de softwares
+        quanto para debugging e modding em jogos single-player.
+      </p>
+      <ol>
+        <li>
+          <h2>Arquitetura de memória</h2> — cada processo recebe um espaço de
+          endereçamento virtual organizado em páginas. Dados estáticos
+          (variáveis globais e segmentos do executável) normalmente têm
+          endereços relativos ao base do módulo; heap e stack são alocados
+          dinamicamente. Sistemas modernos aplicam técnicas como ASLR (Address
+          Space Layout Randomization), que alteram bases e tornam endereços
+          absolutos não confiáveis entre execuções.
+        </li>
+        <li>
+          <h2>Como um scanner funciona (conceito)</h2> — o scanner percorre regiões
+          legíveis do processo e compara bytes lidos com a representação binária
+          do valor procurado. Para isso é preciso escolher o tipo de dado (e.g.,
+          4-byte signed, float, double, string) e o critério de comparação
+          (igual, diferente, aumentou/diminuiu, mudou, desconhecido). Resultados
+          iniciais costumam ser muitos; filtros sucessivos refinam a lista até
+          atingir poucos candidatos plausíveis.
+        </li>
+        <li>
+          <h2>Tipos e representação</h2> — entender tamanhos (8/16/32/64 bits), sinal
+          (signed/unsigned) e endianness é essencial: uma mesma sequência de
+          bytes pode representar inteiros diferentes ou um float distinto
+          dependendo do tipo interpretado.
+        </li>
+        <li>
+          <h2>Ponteiros e cadeias de ponteiros</h2> — um ponteiro é simplesmente um valor
+          que contém outro endereço. Em jogos, o valor útil muitas vezes mora em
+          memória alocada dinamicamente; o que é estável entre execuções é uma
+          estrutura de ponteiros: por exemplo, base_do_módulo + offset1 aponta
+          para uma estrutura que, somando offset2, dá o endereço do valor final.
+          Encontrar essa cadeia (pointer scanning) fornece uma referência
+          robusta que resiste à maioria das mudanças de endereço.
+        </li>
+        <li>
+          <h2>Patch de código e injeção</h2> — além de alterar dados, é possível escrever
+          diretamente na região de código (trocar instruções, inserir
+          jumps/calls) para alterar lógica do programa — técnica poderosa, mas
+          que exige conhecimento de assembly e aumenta o risco de detecção por
+          anti-cheat.
+        </li>
+        <li>
+          <h2>Riscos e proteções</h2> — sistemas operacionais e anti-cheats aplicam
+          proteções (DEP, ASLR, assinaturas de kernel, monitoramento de hooks)
+          para impedir leitura/escrita não autorizada. Tentar contornar essas
+          proteções pode ser ilegal ou resultar em banimento.
+        </li>
+        <li>
+          <h2>Usos legítimos</h2> — debugging, análise de desempenho, ensino de
+          estruturas de dados em tempo real, modding de jogos single-player e
+          pesquisa de segurança com autorização.
+        </li>
+      </ol>
     </section>
+
+    <section id="ferramentas">
+      <div class="titulo">
+        <img src="public/imagens/IDAIcon.png" width="55" alt="">
+        <h1>IDA (Interactive Disassembler)</h1>
+      </div>
+      <p>
+        O IDA (Interactive Disassembler) é uma das ferramentas mais conhecidas e
+        utilizadas na engenharia reversa de software. Ele permite transformar
+        arquivos binários compilados (executáveis, bibliotecas, drivers, etc.)
+        em um código em linguagem de montagem (assembly), tornando possível
+        analisar como um programa funciona mesmo sem ter acesso ao código-fonte
+        original. Além de atuar como um desassemblador estático, o IDA também
+        oferece recursos interativos e um depurador, permitindo investigar
+        dinamicamente o comportamento de programas em tempo real. Por essa
+        versatilidade, o IDA é amplamente usado em pesquisa de segurança,
+        análise de malware, auditorias e exploração de vulnerabilidades.
+      </p>
+      <ol>
+        <li>
+          <h2>Desassemblador Estático</h2> O IDA analisa o arquivo executável (binário) e
+          converte as instruções de máquina em linguagem assembly, permitindo
+          compreender a lógica interna do programa. Reconhece diferentes
+          arquiteturas (x86, x64, ARM, MIPS, PowerPC, entre outras) e sistemas
+          operacionais (Windows, Linux, macOS, etc.).
+        </li>
+        <li>
+          <h2>Reconhecimento Automatico</h2>O IDA Reconhece automaticamente funções e Estruturas Identifica
+          automaticamente funções, loops, tabelas de saltos e strings. Cria um
+          fluxo de controle visual (graph view) que ajuda a entender a estrutura
+          do código.
+        </li>
+        <li>
+          <h2>Análise Interativa</h2> Diferente de desassembladores puramente estáticos,
+          o IDA é interativo: o analista pode renomear funções, variáveis e
+          endereços para dar sentido ao código.
+        </li>
+        <li>
+          <h2>Depurador Integrado</h2> O IDA pode anexar-se a um
+          processo em execução e depurar passo a passo, inspecionando
+          registradores, memória e fluxo de execução. Suporta breakpoints
+          (pontos de parada) e inspeção dinâmica para verificar como o programa
+          realmente se comporta.
+        </li>
+        <li>
+          <h2>Suporte a Plugins e Scripts</h2> É extensível através de plugins e de
+          linguagens de script como IDC, Python e Lua. Isso permite automatizar
+          tarefas de análise, aplicar patches e até integrar outras ferramentas
+          de engenharia reversa.
+        </li>
+        <li>
+          <h2>Reconhecimento de Tipos em C/C++</h2> Reconhecimento de Tipos e Estruturas de Dados Permite mapear
+          estruturas de C/C++ diretamente no assembly. Facilita a análise de
+          funções de APIs, bibliotecas externas e chamadas do sistema.
+        </li>
+        <li>
+          <h2>Visualização de Código: Linear e Gráfico</h2> Fluxo Gráfico vs. Fluxo Linear O IDA oferece duas formas principais de
+          visualização: Linear → lista sequencial de instruções assembly.
+          Gráfico → representação em blocos (Basic Blocks) conectados por setas,
+          facilitando a compreensão de lógicas complexas.
+        </li>
+        <li>
+          <h2>Principais Aplicações</h2> Aplicações Principais Engenharia reversa de softwares proprietários.
+          Análise de malware. Pesquisa e exploração de vulnerabilidades. Estudo
+          de formatos binários e protocolos. Auditoria de segurança em sistemas
+          críticos.
+        </li>
+      </ol>
+    </section>
+    <section id="ferramentas">
+      <div class="titulo">
+        <img src="public/imagens/olly.png" alt="">
+        <h1>OLLYDBG</h1>
+      </div>
+      <p>O OllyDbg é um depurador (debugger) muito utilizado para engenharia reversa em programas Windows. Ele permite analisar programas em tempo real, acompanhar a execução de instruções, inspecionar registradores, memória e modificar o comportamento do software sem acesso ao código-fonte original. É bastante usado por pesquisadores de segurança e entusiastas para entender como um programa funciona “por dentro”.</p>
+      <ol>
+        <li><h2>Depuração em nível de assembly</h2> O OllyDbg mostra o código do programa em linguagem assembly, permitindo que o usuário acompanhe cada instrução executada.</li>
+        <li><h2>Breakpoints (pontos de parada)</h2> Você pode definir pontos onde a execução do programa será pausada, facilitando a análise de como certas funções trabalham.</li>
+        <li><h2>Visualização da memória</h2> Assim como no Cheat Engine, é possível inspecionar regiões da memória, mas aqui o foco é no fluxo do programa, não apenas em valores.</li>
+        <li><h2>Análise de registradores</h2> depurador mostra em tempo real os valores contidos nos registradores da CPU, essenciais para compreender a lógica do software.</li>
+        <li><h2>Patch de código</h2> É possível modificar instruções diretamente no binário para alterar o comportamento do programa.</li>
+        <li><h2>Plugins e extensões</h2> O OllyDbg tem suporte a plugins, expandindo suas funcionalidades, como descriptografia automática e análise de APIs.</li>
+      </ol>
+    </section>
+    <section id="bibliotecas">
+      <section id="bibliotecas">
+  <div class="titulo">
+    <img src="public/imagens/python.png" width="55" alt="">
+    <h1>Bibliotecas e Frameworks para Hacking e Engenharia Reversa</h1>
+  </div>
+  <p>
+    Além das ferramentas, existem diversas bibliotecas e frameworks que ajudam na automação, 
+    análise de memória, engenharia reversa, hooking, injeção de código e análise de binários. 
+    Elas são úteis tanto para aprendizado quanto para testes de segurança autorizados.
+  </p>
+  <ol>
+    <!-- Memória e Processos -->
+    <li><strong>pymem:</strong> Acessa e modifica memória de processos em tempo real (Python).</li>
+    <li><strong>ctypes:</strong> Permite chamar funções nativas do sistema e manipular ponteiros (Python).</li>
+    <li><strong>python-ptrace:</strong> Depuração de processos em Linux, leitura e escrita de memória.</li>
+    <li><strong>MemorySharp:</strong> Framework .NET para manipulação de processos, injeção de DLLs e hooks.</li>
+    <li><strong>MinHook:</strong> Biblioteca em C/C++ para criação de hooks de funções em Windows, muito usada em modding e pesquisa de segurança.</li>
+
+    <!-- Binários e Engenharia Reversa -->
+    <li><strong>pefile:</strong> Análise de arquivos PE (Windows), como executáveis e DLLs.</li>
+    <li><strong>lief:</strong> Manipulação de binários PE, ELF e Mach-O.</li>
+    <li><strong>capstone:</strong> Disassembler multi-arquitetura, converte código de máquina para assembly.</li>
+    <li><strong>unicorn:</strong> Emulação de código assembly em sandbox seguro.</li>
+    <li><strong>keystone:</strong> Assembler multi-arquitetura para gerar instruções de máquina.</li>
+    <li><strong>radare2 bindings:</strong> Acesso programático ao Radare2 para análise de binários.</li>
+    <li><strong>Ghidra API:</strong> Framework de engenharia reversa da NSA, com API para scripts e automação (Java/Python).</li>
+
+    <!-- Automação e Scripting -->
+    <li><strong>pyautogui:</strong> Automação de GUI e interações com o sistema.</li>
+    <li><strong>AutoIt:</strong> Linguagem e biblioteca para automação de Windows.</li>
+    <li><strong>Kiero:</strong> Framework de hooking para DirectX/OpenGL em jogos, usado em cheats ou overlays.</li>
+
+    <!-- Rede e Segurança -->
+    <li><strong>scapy:</strong> Manipulação e análise de pacotes de rede (Python).</li>
+    <li><strong>impacket:</strong> Bibliotecas Python para protocolos de rede, útil em pentesting e exploração.</li>
+    <li><strong>socket:</strong> Biblioteca nativa Python para comunicação TCP/UDP.</li>
+
+    <!-- Outras Úteis -->
+    <li><strong>Frida:</strong> Instrumentação dinâmica de aplicativos, permite hook e análise de funções em tempo real.</li>
+    <li><strong>PyDbg:</strong> Depurador Python para Windows, leitura e escrita de memória, breakpoints.</li>
+    <li><strong>WinAppDbg:</strong> Depuração e manipulação de processos Windows em Python.</li>
+  </ol>
+</section>
+
+    </section>
+<section id="habilidades">
+  <h1 class="titulo-habilidades">Habilidades Necessárias</h1>
+  <div class="cards-habilidades">
+    <div class="card">
+      <h2>Programação</h2>
+      <ul>
+        <li>Python: scripts, automação, análise de memória</li>
+        <li>C/C++: memória, hooks, DLLs</li>
+        <li>Assembly: leitura de código desassemblado</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Engenharia Reversa</h2>
+      <ul>
+        <li>Disassemblers: IDA, Ghidra, Radare2</li>
+        <li>Análise de binários e estruturas de dados</li>
+        <li>Reconhecimento de funções, loops e APIs</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Depuração & Memória</h2>
+      <ul>
+        <li>Debuggers: OllyDbg, x64dbg</li>
+        <li>Análise de heap e stack</li>
+        <li>Injeção de código e patching</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Redes & Protocolos</h2>
+      <ul>
+        <li>TCP/UDP</li>
+        <li>Scapy, Impacket</li>
+        <li>Análise de tráfego e pacotes</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Soft Skills</h2>
+      <ul>
+        <li>Atenção aos detalhes</li>
+        <li>Pensamento crítico e analítico</li>
+        <li>Persistência e ética</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
   </body>
 </html>

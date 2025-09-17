@@ -1,0 +1,147 @@
+/* container do título */
+#ferramentas .titulo {
+  display: flex;
+  align-items: center; /* centraliza verticalmente */
+  justify-content: center; /* centraliza horizontalmente */
+  gap: 12px; /* espaço entre logo e título */
+  margin-bottom: 3vh;
+}
+
+/* imagem */
+#ferramentas .titulo img {
+  width: 55px;
+  height: auto;
+  filter: drop-shadow(0 0 6px #6699ff); /* efeito glow */
+  animation: float 3s ease-in-out infinite;
+      animation: float-bib 3s ease-in-out infinite;
+
+}
+
+/* título */
+#ferramentas .titulo h1 {
+  font-size: 2.2rem;
+  color: #6699ff;
+  text-shadow: 0 0 8px #6699ff;
+  margin: 0;
+}
+
+#ferramentas {
+  text-align: justify;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  max-width: 920px;
+  font-size: 1.1rem;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #e4e4e4; /* texto claro */
+  background: rgba(20, 20, 20, 0.8); /* fundo suave */
+  padding: 4vh 3vh;
+  border-radius: 12px; /* cantos arredondados */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* sombra elegante */
+}
+
+#ferramentas h1 {
+  font-size: 2.2rem;
+  margin-bottom: 3vh;
+  text-align: center;
+  color: #6699ff; /* cor destaque */
+  text-shadow: 0 0 8px #6699ff; /* brilho leve */
+  letter-spacing: 1px;
+  animation: glow-bib 2s ease-in-out infinite alternate;
+}
+
+#ferramentas p {
+  margin-bottom: 4vh;
+  color: #cccccc;
+}
+
+/* Lista de ferramentas */
+#ferramentas ol {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2vh; /* espaço entre cards */
+  padding: 0;
+  margin: 0;
+  list-style: none; /* remove numeração padrão */
+}
+
+/* Cards individuais */
+#ferramentas li {
+  background: rgba(30, 30, 60, 0.85); /* fundo mais profundo */
+  border: 1px solid rgba(102, 153, 255, 0.6); /* borda azul suave */
+  border-radius: 12px;
+  padding: 1.8em 1.5em;
+  width: 280px;
+  color: #e4e4e4;
+  text-align: left;
+  box-shadow: 0 4px 15px rgba(102, 153, 255, 0.3); /* sombra mais suave e moderna */
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* efeito hover */
+#ferramentas li:hover {
+  transform: translateY(-8px) scale(1.03); /* leve aumento de tamanho e elevação */
+  box-shadow: 0 10px 25px rgba(102, 153, 255, 0.5), 0 0 35px rgba(128, 179, 255, 0.4);
+  background: rgba(40, 40, 70, 0.95); /* leve mudança de fundo */
+}
+
+/* animação de brilho suave */
+#ferramentas li::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+}
+
+#ferramentas li:hover::after {
+  transform: rotate(45deg) translateX(20%) translateY(20%);
+  opacity: 1;
+}
+
+/* remove numeração customizada */
+#ferramentas li::before {
+  content: none;
+}
+
+
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-bib {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow-bib {
+  0% {
+    text-shadow: 0 0 5px #6699ff;
+  }
+  100% {
+    text-shadow: 0 0 15px #6699ff;
+  }
+}

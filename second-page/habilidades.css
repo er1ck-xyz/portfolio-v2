@@ -1,0 +1,86 @@
+/* Container geral */
+#habilidades {
+  background: linear-gradient(135deg, rgba(12, 12, 22, 0.85));
+  padding: 5vh 3vh;
+  border-radius: 15px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.7);
+  max-width: 1000px;
+  margin: 5vh auto;
+  padding-top: 12vh;
+  color: #e0e0ff;
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+/* Título da seção */
+#habilidades .titulo-habilidades {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 4vh;
+  color: #6699ff;
+  text-shadow: 0 0 10px #6699ff;
+  animation: glow-titulo 2.5s ease-in-out infinite alternate;
+}
+
+/* Grid dos cards */
+#habilidades .cards-habilidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5vh;
+}
+
+/* Card individual */
+#habilidades .card {
+  background: rgba(20, 30, 70, 0.85);
+  border-radius: 12px;
+  padding: 2vh 1.5vh;
+  box-shadow: 0 4px 20px rgba(0, 102, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(102, 153, 255, 0.4);
+}
+
+/* Hover nos cards */
+#habilidades .card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(102, 153, 255, 0.9);
+}
+
+/* Título dentro do card */
+#habilidades .card h2 {
+  font-size: 1.5rem;
+  color: #99ccff;
+  margin-bottom: 1vh;
+  text-shadow: 0 0 6px #6699ff;
+  animation: glow-card 2s ease-in-out infinite alternate;
+}
+
+/* Lista dentro do card */
+#habilidades .card ul {
+  padding-left: 1.2em;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Animações de glow */
+@keyframes glow-titulo {
+  0% {
+    text-shadow: 0 0 5px #6699ff;
+  }
+  50% {
+    text-shadow: 0 0 15px #99ccff;
+  }
+  100% {
+    text-shadow: 0 0 10px #4d88ff;
+  }
+}
+
+@keyframes glow-card {
+  0% {
+    text-shadow: 0 0 3px #6699ff;
+  }
+  50% {
+    text-shadow: 0 0 8px #80b3ff;
+  }
+  100% {
+    text-shadow: 0 0 5px #3366ff;
+  }
+}

@@ -1,5 +1,5 @@
 :root {
-  --cor-verde: rgb(0, 255, 128);
+  --cor-verde: #6699FF;
   --cor-cinza: #191627;
 
   /* variáveis usadas para animações FA / fallback */
@@ -23,7 +23,7 @@ html {
 /* ===== Body / Background ===== */
 body {
   padding-top: 13vh; /* compensa o header fixo */
-  background: url("https://upload.wikimedia.org/wikipedia/commons/c/cc/Digital_rain_animation_medium_letters_shine.gif")
+  background: url("https://pa1.narvii.com/6506/d61c5a4afc47044ba3cc381bbdb64369f01ab619_hq.gif")
     center/cover fixed no-repeat;
   background-color: #0b0b0f; /* fallback */
   color: #ffffff;
@@ -79,8 +79,8 @@ header a.back {
 /* estilo do ícone "back" (mantive sua animação) */
 .icon-back {
   color: var(--cor-verde);
-  text-shadow: 0 0 5px rgb(0, 255, 128), 0 0 10px rgb(0, 255, 128),
-    0 0 20px rgb(0, 255, 128);
+  text-shadow: 0 0 5px #6699FF, 0 0 10px #3a79f7,
+    0 0 20px #2d58af;
   font-size: 2rem;
   vertical-align: middle;
   cursor: default;
